@@ -1,1 +1,1 @@
-from .handler import ElasticsearchBulkUdp
+from .handler import BulkUdp
