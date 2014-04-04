@@ -11,7 +11,7 @@ easy_install elpylog
 ```
 
 Example Usage
--------
+-------------
 
 ```
 import logging
@@ -24,5 +24,41 @@ my_logger.setLevel(logging.DEBUG)
 my_logger.addHandler(el_log)
 
 my_logger.debug('Hello world.')
+```
+
+Example Usage with `logging.config`
+-----------------------------------
+Your `logging.conf`:
+```
+[loggers]
+keys = root
+
+[handlers]
+keys = elasticsearch
+
+[formatters]
+keys = default
+
+[logger_root]
+level = DEBUG
+handlers = elasticsearch
+
+[handler_elasticsearch]
+class = elpylog.BulkUdp
+args = ('10.42.255.53',)
+formatter = default
+
+[formatter_default]
+format = %(message)s
+```
+
+
+Your main application:
+```
+import logging
+import logging.config
+
+logging.config.fileConfig("logging.conf")
+logging.getLogger().debug('Hello world.')
 ```
 
