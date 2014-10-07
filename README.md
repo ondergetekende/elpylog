@@ -1,3 +1,6 @@
+[![PyPI version](https://badge.fury.io/py/elpylog.png)](http://badge.fury.io/py/elpylog) [![PyPI downloads](https://pypip.in/d/elpylog/badge.png)](https://pypi.python.org/pypi/elpylog)
+
+
 elpylog 
 =======
 Python library for sending events to Elasticsearch over its bulk UDP api, in a logstash compatible fashion.
